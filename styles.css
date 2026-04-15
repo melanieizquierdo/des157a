@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+margin: 0;
+  height: 200vh;
+  font-family: "Lunasima", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    height: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+     font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+    min-height: 100vh;
+    display: table;
+    width: 100%;
+    text-align: center;
+    background-image: url(images/m.jpg);
+    background-size: cover;      
+    background-position: center;   
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+h1{
+    font-size: 9em !important;
+}
+
+
+h2{
+    font-size: 2em !important;
+}
+
+h3{
+    font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.7s ease forwards;
+}
+
+.fade-in:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+
+section {
+    background: linear-gradient(rgb(233, 233, 233), rgba(255, 255, 255, 0.819));
+    padding: 10px;
+   border-radius: 16px;
+  border: 1px inset rgb(255, 255, 255); 
+  border-style: ridge;
+  margin-top: 30px;
+  bottom: 10px;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: lighter;
+  transition: transform 0.3s ease-in, text-shadow 0.2s ease;
+  display: inline-block;
+}
+
+a:hover {
+  transform: scale(1.01);
+  text-shadow: 1px 1px 1px rgba(213, 213, 213, 0.825);
+  font-weight: bolder;
+}
+
+
+ul, ol {
+  list-style: none;
+}
+
+footer {
+   font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: rgb(204, 50, 135);
+  text-align: center;
+}
