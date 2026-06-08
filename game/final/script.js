@@ -18,7 +18,13 @@ gameMusic.volume = 0.15;
 const backgroundBtn = document.querySelector('#background');
 
 backgroundBtn.addEventListener('click', function() {
-    gameMusic.play();
+    if (gameMusic.paused) {
+        gameMusic.play();
+        backgroundBtn.textContent = 'Pause Music'; // optional: change button text
+    } else {
+        gameMusic.pause();
+        backgroundBtn.textContent = 'Play Music'; // optional: change button text
+    }
 });
 
 //play the dice rolling sound
