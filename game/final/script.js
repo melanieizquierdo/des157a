@@ -1,3 +1,7 @@
+
+
+
+
 (function(){
     'use strict'
     console.log('reading JS');
@@ -29,37 +33,25 @@ backgroundBtn.addEventListener('click', function() {
 
 //play the dice rolling sound
 function playDice(callback){
-    diceSound.pause();
     diceSound.currentTime = 0;
+    diceSound.play();
 
     diceSound.onended = function(){
         callback();
         diceSound.onended = null;
     };
-
-    diceSound.play();
 }
-
-function celebrateWinner() {
-    confetti({
-        particleCount: 150,
-        spread: 90,
-        origin: { y: 0.6 }
-    });
-}
-
-
 //stores gama data and also dice images
 const gameData = {
-	dice: ['1.png', '2.png', '3.png', 
-		   '4.png', '5.png', '6.png'],
-	players: ['player 1', 'player 2'],
-	score: [0, 0],
-	roll1: 0,
-	roll2: 0,
-	rollSum: 0,
-	index: 0,
-	gameEnd: 30
+    dice: ['1.png', '2.png', '3.png', 
+           '4.png', '5.png', '6.png'],
+    players: ['player 1', 'player 2'],
+    score: [0, 0],
+    roll1: 0,
+    roll2: 0,
+    rollSum: 0,
+    index: 0,
+    gameEnd: 29
 };
 
  // user input (their name)
@@ -79,9 +71,6 @@ startGame.addEventListener('click', function(){
 
     gameControl.innerHTML='<h3>The game has started!</h3>';
     gameControl.innerHTML +='<button id="quit">Quit?</button>';
-
-    showCurrentScore(); // ADD THIS
-
     document.querySelector('#quit').addEventListener('click', function (){
         buttonSound.play(); // play button sound on quit
         location.reload();
@@ -125,10 +114,6 @@ function throwDice(){
         else {
             console.log('neither die was a 1. game continues');
             gameData.score[gameData.index]= gameData.score[gameData.index] + gameData.rollSum;
-
-            showCurrentScore();
-            checkWinningCondition();
-
             actionArea.innerHTML = '<button id="rollagain">Roll Again</button> or <button id="pass">Pass</button>';
 
             document.querySelector('#rollagain').addEventListener('click', function(){
@@ -142,17 +127,13 @@ function throwDice(){
             });
 
             function checkWinningCondition(){
-    if(gameData.score[gameData.index] >= gameData.gameEnd){
-        celebrateWinner();
-        
-        score.innerHTML = `<h2>Winner is ${gameData.players[gameData.index]} with ${gameData.score[gameData.index]} points!</h2>`;
+                if(gameData.score[gameData.index] > gameData.gameEnd){
+                    score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
 
-        actionArea.innerHTML = '';
-        game.innerHTML = '';
+                    actionArea.innerHTML = '';
+                    document,querySelector('#quit').innerHTML = 'Start a new game?';
 
-        document.querySelector('#quit').innerHTML = 'Start a new game?';
-    }
-
+                }
 
                 //check if anyone won
                     function showCurrentScore() {
@@ -162,17 +143,5 @@ function throwDice(){
         }
     }
     }
-
-    function showCurrentScore() {
-    score.innerHTML = `
-        <p>
-            <strong>${gameData.players[0]}</strong>: ${gameData.score[0]} points
-            <br>
-            <strong>${gameData.players[1]}</strong>: ${gameData.score[1]} points
-        </p>
-    `;
-}
-
-
 
 })();
