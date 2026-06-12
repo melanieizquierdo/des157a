@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Condiment&family=Lunasima:wght@400;700&family=Oxygen+Mono&family=Pinyon+Script&family=VT323&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+    <h1 id="welcome">Welcome</h1>
+
+    <p>INSTRUCTIONS</p>
+    <p><u>Step 1: Roll the dice</u> (if you get 2–6, add that number to your turn's points)</p>
+    <p><u>Step 2: Don't roll a 1!</u> (if you do, you lose all the points from that turn and your turn is over)</p>
+    <p><u>Step 3: Have fun :)</u> (first player to reach 30 points wins)</p>
+    <p></p>
+
+    <div class="container">
+    <div id="gamecontrol">
+        <h3>Start a Game</h3>
+        <button id="startgame">Pick the First Player and Let's Begin</button>
+    </div>
+
+    <div id="game"></div>
+    <div id="actions"></div>
+    <div id="score"></div>
+    </div>
+    
+<div class="title-row">
+    <h2>LET'S ROLL THE DICE</h2>
+    <button id="background" class="background">MUSIC</button>
+</div>
+
+
+</body>
+</html>
