@@ -6,7 +6,6 @@
 
 body {
 margin: 0;
-  height: 200vh;
   font-family: "Lunasima", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -122,4 +121,20 @@ footer {
   font-size: 25px;
   color: rgb(204, 50, 135);
   text-align: center;
+  padding-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+    h1{
+    font-size: 6em !important;
+}
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
 }
